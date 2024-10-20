@@ -27,7 +27,7 @@ describe("CLI App" , () => {
         };
         insertDB.mockResolvedValue(data);//used with mocked asynch functions to simulate the behaviour of promise.resolve(data)
       
-        const result = await newNote(note, tags);
+        const result =await newNote(note, tags);
         expect(result).toEqual(data);
       });
       
@@ -38,7 +38,7 @@ describe("CLI App" , () => {
           };
           getDB.mockResolvedValue(db);
         //when calling getAllNotes we know that it will call the getDB function so it must get the same result
-          const result = await getAllNotes();
+          const result  await getAllNotes();
           expect(result).toEqual(db.notes);
         });
         
