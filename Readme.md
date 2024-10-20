@@ -15,19 +15,31 @@ A simple CLI-based note-taking application that allows you to manage notes and v
    cd cli-note-app
 2. Install dependencies:
    npm install
-
+   
+index.js new <content>  create a new note
+  index.js all            get all notes
+  index.js find <filter>  get matching notes
+  index.js remove <id>    remove a note by id
+  index.js web [port]     launch website to see notes
+  index.js clean          remove all notes
 
 # Usage
 CLI Commands
 
 ## Add a Note:
-note add --title="Note Title" --body="Note Body"
+note new "your note" --tags "tag1, tag2"
+
+## get matching notes
+note find <filter>
+
+## get help 
+note --help 
 
 ## Remove a Note:
 note remove <id>
 
 ## List All Notes:
-note list
+note all
 
 ## Remove All Notes:
 note clean
