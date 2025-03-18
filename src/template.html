@@ -1,13 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="notes">
-        {{ notes }}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Notes</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .notes {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .note {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+        border-left: 4px solid #0078d7;
+        position: relative;
+      }
+      .note:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .note:after {
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background: #e0e0e0;
+      }
+      .note-id {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 5px;
+      }
+      .note-content {
+        margin: 15px 0;
+        white-space: pre-wrap;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 10px;
+      }
+      .tag {
+        background-color: #e9f5ff;
+        color: #0078d7;
+        padding: 3px 10px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+      .no-notes {
+        text-align: center;
+        padding: 50px;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Notes</h1>
     </div>
-</body>
+    <div class="notes">{{ notes }}</div>
+
+  </body>
 </html>

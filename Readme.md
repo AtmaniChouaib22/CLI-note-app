@@ -1,12 +1,15 @@
 # CLI Note App
 
-A simple CLI-based note-taking application that allows you to manage notes and view them in a web browser.
+A simple CLI-based note-taking application that allows you to manage notes in the CLI
+
+![Journal Entry Screenshot](./cliimg.jpg)
+![Journal Entry Screenshot](./img.png)
 
 ## Features
 
-- Add, remove, and list notes via CLI commands.
+- Add with tags, remove, and list notes via CLI commands.
+- Search for a single note
 - View notes in a web browser.
-- Simple HTML templating for displaying notes.
 
 ## Installation
 
@@ -15,65 +18,48 @@ A simple CLI-based note-taking application that allows you to manage notes and v
    cd cli-note-app
 2. Install dependencies:
    npm install
-   
-index.js new <content>  create a new note
-  index.js all            get all notes
-  index.js find <filter>  get matching notes
-  index.js remove <id>    remove a note by id
-  index.js web [port]     launch website to see notes
-  index.js clean          remove all notes
+3. run to create a symlink in global node_modules to point for the project
+   ```
+   npm link
+   ```
 
 # Usage
+
 CLI Commands
 
-## Add a Note:
-note new "your note" --tags "tag1, tag2"
-
-## get matching notes
-note find <filter>
-
-## get help 
-note --help 
-
-## Remove a Note:
-note remove <id>
-
-## List All Notes:
-note all
-
-## Remove All Notes:
-note clean
-
-## Launch Web Interface:
-note web [port]
+```
+  note new <content> -t(optional tags array) or --tags  create a new note
+  note new <content> -t(tag1,tag2)  create a new note
+  note all            get all notes in cli
+  note find <filter>  get matching notes
+  note remove <id>    remove a note by note id
+  note web [port]     launch website to see notes
+  note clean          remove all notes from the DB
+  note --help         app help
+  note --version      app version
+```
 
 Default port is 5000. You can specify a different port if needed.
+
 ### Example
+
 To add a note:
-note add --title="Shopping List" --body="Milk, Bread, Eggs"
+note add "hello world" -t coding,python
 
 To view notes in a web browser on port 4000:
 note web 4000
 
 ## Project Structure
+
 index.js: Entry point for the CLI commands.
 notes.js: Contains functions for managing notes.
 server.js: Contains functions for starting the web server.
 template.html: HTML template for displaying notes.
-
-## Development
-Running the Server
-To manually start the server, you can use the following command:
-node src/server.js
+DB.json stores all note objects
 
 ## Testing
+
 To run tests, use the following command:
 npm test
 
-## Dependencies
-yargs: For parsing CLI commands.
-open: For opening the web browser.
-http: For creating the web server.
-fs/promises: For file system operations.
-
-
+by AtmaniChouaib22

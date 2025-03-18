@@ -1,3 +1,26 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "tags": [
+        "study"
+      ],
+      "id": 1742271448367,
+      "content": "study for examp"
+    },
+    {
+      "tags": [
+        "social"
+      ],
+      "id": 1742271485940,
+      "content": "visit my friend"
+    },
+    {
+      "tags": [
+        "cleaning",
+        "productivity"
+      ],
+      "id": 1742271584848,
+      "content": "clean my room"
+    }
+  ]
 }
